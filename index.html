@@ -1,0 +1,534 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodle</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Order delicious fast food online with Foodle. We deliver fresh food fast to your doorstep.">
+</head>
+<body>
+    <!-- Cart counter -->
+    <div id="cart-counter">0</div>
+    
+    <!-- Dark mode toggle -->
+    <div id="dark-mode-toggle">
+        <input type="checkbox" id="dark-switch">
+        <label for="dark-switch">🌙</label>
+    </div>
+
+    <!-- Sign in modal -->
+    <div id="sign-in-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Sign In</h2>
+            <form id="sign-in-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required>
+                    <span class="error-message" id="name-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile Number</label>
+                    <input type="number" id="mobile" required>
+                    <span class="error-message" id="mobile-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="Address">Address</label>
+                    <input type="text" id="Address" required>
+                    <span class="error-message" id="Address-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required>
+                    <span class="error-message" id="email-error"></span>
+                </div>
+                <button type="submit" class="btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success message popup -->
+    <div id="success-message" class="success-message">
+        <p>🎉 Signed In Successfully!</p>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>Foodle</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="active">Home</a>
+                <a href="#menu">Menu</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+                <button id="sign-in-btn" class="btn-secondary">Sign In</button>
+                <button class="btn-primary">Order Now</button>
+            </div>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>All Fast Food is Available at <span class="text-red">Foodle</span></h1>
+                    <p>We Are Just A Click Away When You Crave For Delicious Fast Food</p>
+                    <div class="hero-buttons">
+                        <a href="#menu" class="btn-primary">Buy Now</a>
+                        <a href="#services" class="btn-secondary">Our Services</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://www.pngplay.com/wp-content/uploads/2/Burger-Free-PNG.png" alt="Delicious sandwich with egg and vegetables">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <h2 class="section-title">Best Delivered Categories</h2>
+            <div class="category-cards">
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="https://www.pngplay.com/wp-content/uploads/15/Classic-Chicken-Burger-PNG-Images-HD.png" alt="Chicken Burger">
+                    </div>
+                    <h3>Burger</h3>
+                    <a href="#menu" class="order-link">Order Now</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="https://www.pngplay.com/wp-content/uploads/2/Pizza-Slice-Free-PNG.png" alt="Chicken Pizza">
+                    </div>
+                    <h3>Pizza</h3>
+                    <a href="#menu" class="order-link">Order Now</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="https://www.pngplay.com/wp-content/uploads/15/Kfc-French-Fries-Free-PNG.png" alt="French Fries">
+                    </div>
+                    <h3>French Fries</h3>
+                    <a href="#menu" class="order-link">Order Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <h2 class="section-title">Our Regular Menu</h2>
+            <p class="section-subtitle">These Are Our Regular Menus. You Can Order Anything You Like.</p>
+            
+            <div class="menu-items">
+                <!-- Menu Item 1 -->
+                <div class="menu-item">
+                    <div class="menu-image">
+                        <img src="https://www.pngplay.com/wp-content/uploads/9/Burger-King-PNG-Free-File-Download.png" alt="Chicken Burger">
+                    </div>
+                    <div class="menu-details">
+                        <h3>Burger</h3>
+                        <div class="menu-meta">
+                            <span class="rating">4.5 ★</span>
+                            <span class="price">₹299</span>
+                        </div>
+                        <p>Delicious paneer burger with fresh vegetables and special sauce.</p>
+                        <button class="buy-now-btn">Buy Now</button>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 2 -->
+                <div class="menu-item">
+                    <div class="menu-image">
+                        <img src="https://www.pngplay.com/wp-content/uploads/2/Pepperoni-Pizza-PNG-Background.png" alt="Chicken Pizza">
+                    </div>
+                    <div class="menu-details">
+                        <h3>Pizza</h3>
+                        <div class="menu-meta">
+                            <span class="rating">4.8 ★</span>
+                            <span class="price">₹349</span>
+                        </div>
+                        <p>Authentic Italian pizza with grilled paneer, mushrooms and cheese.</p>
+                        <button class="buy-now-btn">Buy Now</button>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 3 -->
+                <div class="menu-item">
+                    <div class="menu-image">
+                        <img src="https://www.pngplay.com/wp-content/uploads/15/Kfc-French-Fries-Free-PNG.png" alt="French Fries">
+                    </div>
+                    <div class="menu-details">
+                        <h3>French Fries</h3>
+                        <div class="menu-meta">
+                            <span class="rating">4.3 ★</span>
+                            <span class="price">₹199</span>
+                        </div>
+                        <p>Crispy golden french fries with special seasoning.</p>
+                        <button class="buy-now-btn">Buy Now</button>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 4 -->
+                <div class="menu-item">
+                    <div class="menu-image">
+                        <img src="https://www.pngplay.com/wp-content/uploads/2/Sandwich-Transparent-Image.png" alt="Chicken Sandwich">
+                    </div>
+                    <div class="menu-details">
+                        <h3>Sandwich</h3>
+                        <div class="menu-meta">
+                            <span class="rating">4.7 ★</span>
+                            <span class="price">₹259</span>
+                        </div>
+                        <p>Fresh sandwich with grilled chicken, lettuce and special sauce.</p>
+                        <button class="buy-now-btn">Buy Now</button>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 5 -->
+                <div class="menu-item">
+                    <div class="menu-image">
+                        <img src="https://www.pngplay.com/wp-content/uploads/9/Starbucks-Background-PNG.png" alt="Beef Burger">
+                    </div>
+                    <div class="menu-details">
+                        <h3>Coffee</h3>
+                        <div class="menu-meta">
+                            <span class="rating">4.6 ★</span>
+                            <span class="price">₹499</span>
+                        </div>
+                        <p>Smooth, bold coffee with rich aroma and our signature blend in every sip.</p>
+                        <button class="buy-now-btn">Buy Now</button>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 6 -->
+                <div class="menu-item">
+                    <div class="menu-image">
+                        <img src="https://www.pikpng.com/pngl/b/564-5648238_dosa-png-images-south-indian-dish-png-clipart.png" alt="Chicken Nuggets">
+                    </div>
+                    <div class="menu-details">
+                        <h3>Masala Dosa</h3>
+                        <div class="menu-meta">
+                            <span class="rating">4.4 ★</span>
+                            <span class="price">₹119</span>
+                        </div>
+                        <p>Crispy dosa served hot with flavorful chutney and signature masala filling.</p>
+                        <button class="buy-now-btn">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">We Offer A Wide Range Of Services To Meet Your Needs</p>
+            
+            <div class="service-cards">
+                <div class="service-card">
+                    <div class="service-icon">🍔</div>
+                    <h3>Fast Delivery</h3>
+                    <p>We deliver your food as fast as possible. We know how important your time is.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🍕</div>
+                    <h3>Fresh Food</h3>
+                    <p>We use only the freshest ingredients to make your food taste better.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🥤</div>
+                    <h3>24/7 Service</h3>
+                    <p>Our services are available 24/7. We are always here to serve you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotional Offers -->
+    <section class="promo">
+        <div class="container">
+            <h2 class="section-title">Special Offers</h2>
+            <p class="section-subtitle">Don't Miss Out On Our Special Offers!</p>
+            
+            <div class="promo-cards">
+                <div class="promo-card">
+                    <div class="promo-content">
+                        <h3>20% OFF</h3>
+                        <p>On all burgers</p>
+                        <p class="promo-code">Use code: <span>BURGER20</span></p>
+                        <button class="btn-primary">Order Now</button>
+                    </div>
+                </div>
+                
+                <div class="promo-card">
+                    <div class="promo-content">
+                        <h3>FREE DRINK</h3>
+                        <p>With any pizza</p>
+                        <p class="promo-code">Use code: <span>FREEDRINK</span></p>
+                        <button class="btn-primary">Order Now</button>
+                    </div>
+                </div>
+                
+                <div class="promo-card">
+                    <div class="promo-content">
+                        <h3>BUY 1 GET 1</h3>
+                        <p>On all sandwiches</p>
+                        <p class="promo-code">Use code: <span>BOGO</span></p>
+                        <button class="btn-primary">Order Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Foodle</h2>
+                    <p>Delicious Food Delivered Fast</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#menu">Menu</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contact Us</h3>
+                        <ul>
+                            <li>KJ Somaiya College, Mumbai</li>
+                            <li>Phone: +91 8669861578</li>
+                            <li>Email: info@foodle.com</li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Follow Us</h3>
+                        <div class="social-links">
+                            <a href="#">Facebook</a>
+                            <a href="#">Twitter</a>
+                            <a href="#">Instagram</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; Made with ❤️ by Aayush Solanke</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Add to cart message -->
+    <div id="add-to-cart-message" class="add-to-cart-message">
+        ✅ Added to Cart!
+    </div>
+
+    <!-- Menu tooltip -->
+    <div id="menu-tooltip" class="menu-tooltip">
+        Click to add this delicious item to your cart! 😍
+    </div>
+
+    <script>
+        // Buy Now Button Functionality
+        const buyNowButtons = document.querySelectorAll('.buy-now-btn');
+        const addToCartMessage = document.getElementById('add-to-cart-message');
+        const cartCounter = document.getElementById('cart-counter');
+        let cartCount = 0;
+
+        buyNowButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Update cart counter
+                cartCount++;
+                cartCounter.textContent = cartCount;
+                
+                // Position message near the clicked button
+                const rect = this.getBoundingClientRect();
+                addToCartMessage.style.top = `${rect.top - 40}px`;
+                addToCartMessage.style.left = `${rect.left}px`;
+                
+                // Show message
+                addToCartMessage.classList.add('show');
+                
+                // Hide message after 2 seconds
+                setTimeout(() => {
+                    addToCartMessage.classList.remove('show');
+                }, 2000);
+                
+                // Create burger emoji
+                createBurgerEmoji(e.clientX, e.clientY);
+            });
+        });
+        
+        // Floating Burger Emoji Cursor Animation
+        document.addEventListener('mousemove', function(e) {
+            // Limit the frequency of emoji creation (every 300ms)
+            if (!this.lastCreateTime || Date.now() - this.lastCreateTime > 300) {
+                createBurgerEmoji(e.clientX, e.clientY);
+                this.lastCreateTime = Date.now();
+            }
+        });
+
+        function createBurgerEmoji(x, y) {
+            const emoji = document.createElement('div');
+            emoji.className = 'burger-emoji';
+            emoji.textContent = '🍔';
+            emoji.style.left = `${x}px`;
+            emoji.style.top = `${y}px`;
+            
+            document.body.appendChild(emoji);
+            
+            // Remove emoji after animation completes
+            setTimeout(() => {
+                emoji.remove();
+            }, 1000);
+        }
+        
+        // Menu Item Tooltips
+        const menuItems = document.querySelectorAll('.menu-item');
+        const menuTooltip = document.getElementById('menu-tooltip');
+        
+        menuItems.forEach(item => {
+            item.addEventListener('mouseenter', function(e) {
+                menuTooltip.style.opacity = '1';
+            });
+            
+            item.addEventListener('mousemove', function(e) {
+                menuTooltip.style.top = `${e.clientY + 15}px`;
+                menuTooltip.style.left = `${e.clientX + 15}px`;
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                menuTooltip.style.opacity = '0';
+            });
+        });
+        
+        // Sign In Modal
+        const signInBtn = document.getElementById('sign-in-btn');
+        const signInModal = document.getElementById('sign-in-modal');
+        const closeModal = document.querySelector('.close-modal');
+        const signInForm = document.getElementById('sign-in-form');
+        const successMessage = document.getElementById('success-message');
+        
+        signInBtn.addEventListener('click', function() {
+            signInModal.style.display = 'flex';
+        });
+        
+        closeModal.addEventListener('click', function() {
+            signInModal.style.display = 'none';
+        });
+        
+        window.addEventListener('click', function(e) {
+            if (e.target === signInModal) {
+                signInModal.style.display = 'none';
+            }
+        });
+        
+        signInForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form inputs
+            const name = document.getElementById('name');
+            const mobile = document.getElementById('mobile');
+            const email = document.getElementById('email');
+            
+            // Validate inputs
+            let isValid = true;
+            
+            if (!name.value.trim()) {
+                document.getElementById('name-error').textContent = 'Please enter your name';
+                isValid = false;
+            } else {
+                document.getElementById('name-error').textContent = '';
+            }
+            
+            if (!mobile.value.trim()) {
+                document.getElementById('mobile-error').textContent = 'Please enter your mobile number';
+                isValid = false;
+            } else {
+                document.getElementById('mobile-error').textContent = '';
+            }
+            
+            if (!email.value.trim()) {
+                document.getElementById('email-error').textContent = 'Please enter your email';
+                isValid = false;
+            } else if (!isValidEmail(email.value)) {
+                document.getElementById('email-error').textContent = 'Please enter a valid email';
+                isValid = false;
+            } else {
+                document.getElementById('email-error').textContent = '';
+            }
+            
+            if (isValid) {
+                // Close modal
+                signInModal.style.display = 'none';
+                
+                // Show success message
+                successMessage.classList.add('show');
+                
+                // Hide success message after 3 seconds
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 3000);
+                
+                // Reset form
+                signInForm.reset();
+            }
+        });
+        
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+        
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('dark-switch');
+        
+        darkModeToggle.addEventListener('change', function() {
+            document.body.classList.toggle('dark-mode');
+            
+            // Save preference to localStorage
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+        
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            darkModeToggle.checked = true;
+        }
+        
+        // Mobile Navigation Toggle
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburgerMenu.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
